@@ -31,8 +31,8 @@ const Message: React.FC<MessageProps> = ({ message, showSender = false }) => {
       <div 
         className={`max-w-[80%] rounded-lg py-2 px-3 
           ${isOwn 
-            ? 'bg-messenger-purple text-white rounded-br-none' 
-            : 'bg-messenger-light text-gray-800 rounded-bl-none'
+            ? 'bg-primary text-white rounded-br-none' 
+            : 'bg-secondary text-gray-800 rounded-bl-none'
           }`}
       >
         {showSender && !isOwn && (

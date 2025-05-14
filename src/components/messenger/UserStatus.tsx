@@ -77,9 +77,9 @@ const UserStatus: React.FC<UserStatusProps> = ({
   const getStatusColor = () => {
     switch (status) {
       case 'online':
-        return 'bg-messenger-online';
+        return 'bg-green-500';
       case 'typing':
-        return 'bg-messenger-typing';
+        return 'bg-blue-500';
       case 'idle':
         return 'bg-yellow-400';
       default:
@@ -92,9 +92,9 @@ const UserStatus: React.FC<UserStatusProps> = ({
     
     switch (status) {
       case 'online':
-        return <span className="text-xs text-messenger-online">Онлайн</span>;
+        return <span className="text-xs text-green-500">Онлайн</span>;
       case 'typing':
-        return <span className="text-xs text-messenger-typing">Печатает...</span>;
+        return <span className="text-xs text-blue-500">Печатает...</span>;
       case 'idle':
         return <span className="text-xs text-yellow-400">Неактивен</span>;
       case 'offline':

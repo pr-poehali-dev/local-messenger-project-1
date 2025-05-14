@@ -47,7 +47,7 @@ const Avatar: React.FC<AvatarProps> = ({
         onClick={onClick}
       >
         <AvatarImage src={src} alt={name} />
-        <AvatarFallback className="bg-messenger-purple/20 text-messenger-purple">
+        <AvatarFallback className="bg-primary/20 text-primary">
           {getFallbackInitials()}
         </AvatarFallback>
       </UIAvatar>
