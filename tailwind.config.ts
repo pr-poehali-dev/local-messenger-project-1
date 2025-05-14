@@ -1,13 +1,13 @@
 
-import { defineConfig } from "tailwindcss";
+import type { Config } from "tailwindcss";
 
-export default defineConfig({
+const config: Config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   prefix: "",
   theme: {
@@ -53,25 +53,28 @@ export default defineConfig({
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        messenger: {
-          purple: "#9b87f5",
-          light: "#F2F3F7",
-          selected: "#EEF1F8",
-          hover: "#F6F7FB",
-          input: "#F8F9FB",
-          online: "#4AD15F",
-          typing: "#9b87f5",
-        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+          accent: {
+            DEFAULT: "hsl(var(--sidebar-accent))",
+            foreground: "hsl(var(--sidebar-accent-foreground))",
+          },
         },
+        messenger: {
+          purple: "#9b87f5",
+          light: "#f0f2ff",
+          hover: "#f7f7f7",
+          selected: "#efefef",
+          input: "#f0f0f0",
+          online: "#42d642",
+          typing: "#f97316",
+        },
+      },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -88,19 +91,18 @@ export default defineConfig({
           to: { height: "0" },
         },
         "typing-dot": {
-          "0%, 60%, 100%": { transform: "translateY(0)" },
-          "30%": { transform: "translateY(-4px)" },
+          "0%, 100%": { opacity: "0.2", transform: "translateY(0)" },
+          "50%": { opacity: "1", transform: "translateY(-2px)" }
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "typing-dot": "typing-dot 1.4s infinite ease-in-out",
-      },
-      fontFamily: {
-        roboto: ["Roboto", "sans-serif"],
+        "typing-dot": "typing-dot 1s infinite"
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-});
+  plugins: [require("tailwindcss-animate")],
+};
+
+export default config;
